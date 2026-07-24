@@ -8,8 +8,14 @@ import { pool } from './config/db.js';
 import authRoutes from './routes/auth.routes.js';
 import { errorHandler } from './middlewares/error.middleware.js';
 import { swaggerSpec } from './docs/swagger.js';
+import ingredienteRoutes from './routes/ingrediente.routes.js';
+//import { platilloRoutes } from './routes/platillo.routes.js';
 
 dotenv.config();
+
+/**
+ * SUSTITUIR LOS MODELOS MANUALES POR LOS PROCEDIMIENTOS ALMACENADOS 
+ */
 
 const app = express();
 
@@ -31,6 +37,8 @@ app.get('/health', async (req, res) => {
 });
 
 app.use('/api', authRoutes);
+app.use('/api', ingredienteRoutes);
+//app.use('/api', platilloRoutes);
 
 app.use(errorHandler);
 
