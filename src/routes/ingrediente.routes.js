@@ -14,6 +14,8 @@ const router = Router();
  * @swagger
  * /api/ingredients/categories:
  *   get:
+ *     tags:
+ *       - Modulo de Nuevo Insumo (Formulario e Historial de Ingredientes)
  *     summary: Lista las categorías de ingredientes (para el dropdown del formulario)
  *     responses:
  *       200:
@@ -25,6 +27,8 @@ router.get('/ingredients/categories', verificarAuth, getCategorias);
  * @swagger
  * /api/ingredients/units:
  *   get:
+ *     tags:
+ *       - Modulo de Nuevo Insumo (Formulario e Historial de Ingredientes)
  *     summary: Lista las unidades de medida (para el dropdown del formulario)
  *     responses:
  *       200:
@@ -36,6 +40,8 @@ router.get('/ingredients/units', verificarAuth, getUnidades);
  * @swagger
  * /api/ingredients/calculate-cost:
  *   post:
+ *     tags:
+ *       - Modulo de Nuevo Insumo (Formulario e Historial de Ingredientes)
  *     summary: Calcula el costo unitario a partir de los datos de compra (preview, no guarda)
  *     requestBody:
  *       required: true
@@ -63,6 +69,8 @@ router.post('/ingredients/calculate-cost', verificarAuth, postCalcularCosto);
  * @swagger
  * /api/ingredients:
  *   post:
+ *     tags:
+ *       - Modulo de Nuevo Insumo (Formulario e Historial de Ingredientes)
  *     summary: Registra un nuevo ingrediente (insumo) ya con el costo confirmado
  *     requestBody:
  *       required: true
@@ -89,6 +97,8 @@ router.post('/ingredients', verificarAuth, postRegistrarInsumo);
  * @swagger
  * /api/ingredients/recent:
  *   get:
+ *     tags:
+ *       - Modulo de Nuevo Insumo (Formulario e Historial de Ingredientes)
  *     summary: Historial de los últimos 50 ingredientes registrados
  *     responses:
  *       200:

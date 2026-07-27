@@ -7,6 +7,8 @@ const router = Router();
  * @swagger
  * /api/auth/register:
  *   post:
+ *     tags:
+ *       - Modulo de Registro e Inicio de Sesion
  *     summary: Registra un nuevo usuario
  *     security: []
  *     requestBody:
@@ -32,6 +34,8 @@ router.post('/auth/register', registrar);
  * @swagger
  * /api/auth/login:
  *   post:
+ *     tags:
+ *       - Modulo de Registro e Inicio de Sesion
  *     summary: Inicia sesión y devuelve un token JWT
  *     security: []
  *     requestBody:
