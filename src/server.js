@@ -10,12 +10,10 @@ import { errorHandler } from './middlewares/error.middleware.js';
 import { swaggerSpec } from './docs/swagger.js';
 import ingredienteRoutes from './routes/ingrediente.routes.js';
 import platilloRoutes from './routes/platillo.routes.js';
-
+import inventarioIngredientes from './routes/inventarioIngredientes.routes.js';
+//import inventarioPlatillos from './routes/inventarioPlatillos.routes.js';
+//import dashboarRoutes from './routes/dashboardRoutes.js';
 dotenv.config();
-
-/**
- * SUSTITUIR LOS MODELOS MANUALES POR LOS PROCEDIMIENTOS ALMACENADOS 
- */
 
 const app = express();
 
@@ -39,8 +37,9 @@ app.get('/health', async (req, res) => {
 app.use('/api', authRoutes);
 app.use('/api', ingredienteRoutes);
 app.use('/api', platilloRoutes);
-//app.use('/api', TablaIngredientes);
-//app.use('/api', TablaPlatillos);
+app.use('/api', inventarioIngredientes);    
+//app.use('/api', inventarioPlatillos);
+//app.use('api', dashboardRoutes);
 
 app.use(errorHandler);
 
