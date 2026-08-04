@@ -34,7 +34,7 @@ app.get('/health', async (req, res) => {
   }
 });
 
-app.use('/api', authRoutes);
+app.use('/api', authRoutes); 
 app.use('/api', ingredienteRoutes);
 app.use('/api', platilloRoutes);
 app.use('/api', inventarioIngredientes);    
