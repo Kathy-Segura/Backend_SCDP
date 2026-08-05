@@ -34,10 +34,9 @@ app.get('/health', async (req, res) => {
   }
 });
 
-// Endpoint raíz - útil para el front y para verificar que la API está viva
 app.get('/', (req, res) => {
   res.json({
-    api: "SCDP API - Sistema de Costeo de Producción",
+    api: "Sistema CDP",
     version: "1.0.0",
     status: "OK",
     timestamp: new Date().toISOString(),
@@ -53,6 +52,7 @@ app.get('/', (req, res) => {
     }
   });
 });
+
 
 app.use('/api', authRoutes); 
 app.use('/api', ingredienteRoutes);
