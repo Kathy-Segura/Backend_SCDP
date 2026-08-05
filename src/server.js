@@ -37,18 +37,19 @@ app.get('/health', async (req, res) => {
 // Endpoint raíz - útil para el front y para verificar que la API está viva
 app.get('/', (req, res) => {
   res.json({
-    status: 'ok',
-    servicio: 'SCDP API - Sistema de Costeo de Producción',
-    version: '1.0.0',
-    docs: '/api-docs',
-    health: '/health',
-    endpoints: {
-      auth: '/api/auth',
-      ingredientes: '/api',
-      platillos: '/api',
-      inventarioIngredientes: '/api',
-      inventarioPlatillos: '/api',
-      dashboard: '/api'
+    api: "SCDP API - Sistema de Costeo de Producción",
+    version: "1.0.0",
+    status: "OK",
+    timestamp: new Date().toISOString(),
+    docs: "/api-docs",
+    health: "/health",
+    modules: {
+      auth: "/api/auth",
+      ingredientes: "/api/ingredients",
+      platillos: "/api/dishes",
+      inventarioIngredientes: "/api/ingredients-inventory",
+      inventarioPlatillos: "/api/dishes-inventory",
+      dashboard: "/api/dashboard"
     }
   });
 });
